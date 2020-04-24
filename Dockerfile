@@ -23,5 +23,5 @@ FROM eksctl as eksctl-kubectl
 RUN apk add --update ca-certificates bash gnupg jq \
   && apk add --update -t deps curl gettext \
   && rm -rf /var/cache/apk/* 
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && mv kubectl /usr/local/bin/kubectl \
   && chmod +x /usr/local/bin/kubectl
