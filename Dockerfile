@@ -18,4 +18,4 @@ RUN apk -uv add --no-cache groff jq less bash && \
 
 COPY --from=downloads  /downloads/eksctl /usr/local/bin
 
-ENTRYPOINT [ "/usr/local/bin/eksctl" ]
+#ENTRYPOINT [ "/usr/local/bin/eksctl" ]
